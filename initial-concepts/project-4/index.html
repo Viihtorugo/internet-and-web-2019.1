@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Chico</title>
+	<script>
+		function getName() {
+			var name = document.getElementById("name").value;
+			
+			if(name == "Chico") {
+				alert("Acertou!");
+			} else {
+				alert("Errou, tente novamente!");
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input id="name" type="text" placeholder="Quem é o autor da música Cálice?" size="25">
+		<input type="button" value="Enviar Resposta" onclick="getName()">
+	</form>
+</body>
+</html>
