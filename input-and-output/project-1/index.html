@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Conversão para Metros</title>
+	<meta charset="UTF-8">
+	<script>
+		function toConvert() {
+			var number 	= document.getElementById("number").value;
+			var init 	= document.getElementById("optionStart").value;
+			var convert 	= document.getElementById("optionOfToConvert").value;
+
+			if (number > 0) {
+				if (init != convet) {
+					if (init === "cm") {
+						alert("teste");
+						if (convert == "dm") {
+								alert("Conversão para décimetros é igual a " + number/10);
+						} else if (convert == "m") {
+								alert("Conversão para metros é igual a " + number/100);
+						}
+					} else if (init == "dm") {
+						if (convert == "cm") {
+								alert("Conversão para centímetros é igual a " + number*10);
+						} else if (convert == "m") {
+							alert("Conversão para metros é igual a " + number/10);
+						}
+					} else {
+						if (convert == "cm") {
+							alert("Conversão para centímetros é igual a " + number*100);
+						} else if (convert == "dm") {
+							alert("Conversão para décimetros é igual a " + number*10);
+						}
+					}
+				} else {
+					alert("Modifique os tipos de conversões");
+				}
+			} else {
+				alert("Digite um número maior que 0");
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input id="number" type="number" placeholder="Número para converter">
+		<select id="optionStart">
+			<option value="cm">Centímetro</option>
+			<option value="dm">Décimetro</option>
+			<option value="m">Metro</option>
+		</select>
+		para
+		<select id="optionOfToConvert">
+			<option value="cm">Centímetro</option>
+			<option value="dm">Décimetro</option>
+			<option value="m">Metro</option>
+		</select>
+		<button onclick="toConvert()">Realizar conversão</button>
+	</form>
+</body>
+</html>
