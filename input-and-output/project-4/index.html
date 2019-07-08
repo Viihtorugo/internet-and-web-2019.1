@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Calcular a Média</title>
+	<script>
+		function calcularMedia () {
+			var t1 = parseFloat(document.getElementById("tarefa-1").value);
+			var t2 = parseFloat(document.getElementById("tarefa-2").value);
+			var t3 = parseFloat(document.getElementById("tarefa-3").value);
+			var t4 = parseFloat(document.getElementById("tarefa-4").value);
+			
+			var n1 = parseFloat(document.getElementById("prova-1").value);
+			var n2 = parseFloat(document.getElementById("prova-2").value);
+			
+			var media = 0.5*((t1+t2+t3+t4)/4) + 0.5*((n1+n2)/2);
+	
+			alert("Sua média é igual " + media);
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input id="tarefa-1" type="number" placeholder="Nota da tarefa 1"><br>
+		<input id="tarefa-2" type="number" placeholder="Nota da tarefa 2"><br>
+		<input id="tarefa-3" type="number" placeholder="Nota da tarefa 3"><br>
+		<input id="tarefa-4" type="number" placeholder="Nota da tarefa 4"><br>
+		<input id="prova-1" type="number" placeholder="Nota da prova 1"><br>
+		<input id="prova-2" type="number" placeholder="Nota da prova 2"><br>
+		<input type="button" value="Calcular a média" onclick="calcularMedia()">
+	</form>
+</body>
+</html>
