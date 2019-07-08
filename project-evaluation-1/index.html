@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Tente acertar!</title>
+	<style>
+		body {
+			background-color: DodgerBlue;
+			margin: 0px auto;
+			display: flex;
+			flex-direction: column;
+		}
+		
+		header {
+			width: 100%;
+			background-color: white;
+			color: DodgerBlue;
+			display: flex;
+			justify-content: center;
+		}
+		
+		form {
+			margin: 5% auto;
+			padding: 20px 20px 5px 20px;
+			border-width: 2px;
+			border-style: solid;
+			border-color: white;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+		}
+		
+		form input {
+			margin: 2px 10px;
+		}
+
+		form button {
+			margin: 20px 10px;
+			text-align: center;
+			color: white;
+			background-color: DodgerBlue;
+			font-size: 14pt;
+			border-width: 1px;
+			border-style: solid;
+			border-color: white;
+		}
+	</style>
+	<script>
+		function startGame () {
+			var playerName1 = document.getElementById("name-1").value;
+			var playerAge1 = document.getElementById("age-1").value;
+			var playerName2 = document.getElementById("name-2").value;
+			var playerAge2 = document.getElementById("age-2").value;
+			
+			alert(playerName1 + playerName2 + playerAge1 + playerAge2);
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Tente acertar o número!</h1>
+	</header>
+	
+	<form>
+		<input id="name-1" type="text" placeholder="Nome do primeiro jogador">
+		<input id="age-1" type="number" placeholder="Idade do primeiro jogador" min=1>
+		<input id="name-2" type="text" placeholder="Nome do segundo jogador">
+		<input id="age-2" type="number" placeholder="Idade do segundo jogador" min=1>
+		<button onclick="startGame()">START</button>
+	</form>
+</body>
+</html>
