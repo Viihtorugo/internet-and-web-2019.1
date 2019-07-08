@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Restaurante UFAL</title>
+	<script>
+		function getData() {
+			var nome = prompt("Seu nome: ");
+			var peso = prompt("Peso do prato em gramas: ", "");
+			var qtdSucos = prompt("Quantidade de copo de suco: ", "");
+			var qtdSobr = prompt("Quantidade de pratos de sobremesa: ", "");
+			
+			alert(	nome + 
+				"\nconsumiu:\n" + 
+				parseFloat(peso) + " gramas no self-service R$ " + (parseFloat(peso)*30/1000) +" reais\n" +
+				qtdSucos + " sucos R$ " + parseInt(qtdSucos)*4 + " reais\n" +
+				qtdSobr + " pratos de sobremesa R$ " + parseInt(qtdSobr)*4 + " reais\n" +
+				"Total " + ( (parseFloat(peso)*30/1000) + parseInt(qtdSucos)*4 + parseInt(qtdSobr)*4 ) + " reais");
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<button onclick="getData()">A conta!</button>
+	</form>
+</body>
+</html>
