@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Calcular a área de um quadrilatero qualquer</title>
+	<meta charset="UTF-8"/>
+	<script>
+		function calcular () {
+			var l1 = parseFloat(document.getElementById("lado-1").value);
+			var l2 = parseFloat(document.getElementById("lado-2").value);
+			var l3 = parseFloat(document.getElementById("lado-3").value);
+			var l4 = parseFloat(document.getElementById("lado-4").value);
+			
+			alert(Math.sin((180*Math.PI)/180));
+
+			alert("Perímetro: " + (l1+l2+l3+l4) + " | Área: " + "calma");
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input id="lado-1" type="number" placeholder="Lado 1"><br/>
+		<input id="lado-2" type="number" placeholder="Lado 2"><br/>
+		<input id="lado-3" type="number" placeholder="Lado 3"><br/>
+		<input id="lado-4" type="number" placeholder="Lado 4"><br/><br/>
+		<input type="button" value="Calcular a área e o perímetro" onclick="calcular()">
+	</form>
+</body>
+</html>
