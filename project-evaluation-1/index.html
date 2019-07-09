@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR"><
 <head>
-	<meta charset="UTF-8">
-	<title>Tente acertar!</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Guess game!</title>
 	<style>
 		body {
 			background-color: DodgerBlue;
@@ -10,15 +10,14 @@
 			display: flex;
 			flex-direction: column;
 		}
-		
 		header {
 			width: 100%;
 			background-color: white;
 			color: DodgerBlue;
 			display: flex;
 			justify-content: center;
+
 		}
-		
 		form {
 			margin: 5% auto;
 			padding: 20px 20px 5px 20px;
@@ -29,11 +28,9 @@
 			justify-content: center;
 			flex-direction: column;
 		}
-		
 		form input {
 			margin: 2px 10px;
 		}
-
 		form button {
 			margin: 20px 10px;
 			text-align: center;
@@ -44,28 +41,82 @@
 			border-style: solid;
 			border-color: white;
 		}
-	</style>
-	<script>
-		function startGame () {
-			var playerName1 = document.getElementById("name-1").value;
-			var playerAge1 = document.getElementById("age-1").value;
-			var playerName2 = document.getElementById("name-2").value;
-			var playerAge2 = document.getElementById("age-2").value;
-			
-			alert(playerName1 + playerName2 + playerAge1 + playerAge2);
-		}
-	</script>
+		</style>
+		<script>
+			function startGame () {
+				var playerName1 = document.getElementById("name1").value;
+				var playerAge1 = document.getElementById("age1").value;
+				var playerName2 = document.getElementById("name2").value;
+				var playerAge2 = document.getElementById("age2").value;
+
+				var numero = Math.floor((Math.random()*20)+1);
+				var flag1 = 0, flag2 = 0, counter = -1;
+				
+				if (playerName1 == "" || playerName2 == "" || playerAge1 == "" || playerAge2 == "") {
+					alert("Blank space is not a valid input");
+				}
+				else {
+					while (1) {
+						counter++;
+						var player1 = prompt("Insert a natural number from 1 to 20, " + playerName1);
+						while (player1 == "" || isNaN(player1)) {
+							alert("Invalid input, only numbers are accepted");
+							var player1 = prompt("Insert a natural number from 1 to 20, " + playerName1);
+						}
+						if (player1 == null) {
+							alert("Game terminated by user");
+							break;
+						}
+
+						if (player1 == numero) {
+							alert(playerName1 + " won! And is " + playerAge1 + " years old.");
+							alert(playerName1 + " failed " + counter + " times and succeded once.\n" + playerName2 + " failed " + counter + " times and never succeded.");
+							alert(playerName2 + " do not give up. You are " + playerAge2 + " years old and plenty of time to try again!");
+							break;
+						}
+						else if (player1 > numero) {
+							alert("The number inputed by " + playerName1 + " is too high");
+						}
+						else if (player1 < numero) {
+							alert("The number inputed by " + playerName1 + " is too low");
+						}
+
+						var player2 = prompt("Insert a natural number from 1 to 20, " + playerName2);
+						while (player2 == "" || isNaN(player2)) {
+							alert("Invalida input, only numbers are accepted");
+							var player2 = prompt("Insert a natural number from 1 to 20, " + playerName2);
+						}
+						if (player2 == null) {
+							alert("Game terminated by user");
+							break;
+						}
+
+						if (player2 == numero) {
+							alert(playerName2 + " won! And is " + playerAge2 + " years old.");
+							alert(playerName2 + " failed " + counter + " times and succeded once.\n" + playerName1 + " failed " + counter + " times and never succeded.");
+							alert(playerName1 + " do not give up. You are " + playerAge1 + " years old and have plenty of time to try again!");
+							break;
+						}
+						else if (player2 > numero) {
+							alert("The number inputed by " + playerName2 + " is too high");
+						}
+						else if (player2 < numero) {
+							alert("The number inputed by " + playerName2 + " is too low");
+						}
+					}
+				}
+			}
+		</script>
 </head>
 <body>
 	<header>
-		<h1>Tente acertar o número!</h1>
+		<h1>Try to guess the secret number!</h1>
 	</header>
-	
 	<form>
-		<input id="name-1" type="text" placeholder="Nome do primeiro jogador">
-		<input id="age-1" type="number" placeholder="Idade do primeiro jogador" min=1>
-		<input id="name-2" type="text" placeholder="Nome do segundo jogador">
-		<input id="age-2" type="number" placeholder="Idade do segundo jogador" min=1>
+		<input id="name1" type="text" placeholder="Name of the first player">
+		<input id="age1" type="number" placeholder="Age of the first player" min="1">
+		<input id="name2" type="text" placeholder="Name of the second player">
+		<input id="age2" type="number" placeholder="Age of the second player" min="1">
 		<button onclick="startGame()">START</button>
 	</form>
 </body>
