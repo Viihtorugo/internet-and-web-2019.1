@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Equação do segundo grau</title>
+	<script>
+		function calcularRaizes() {
+			var a = prompt("Digite o coeficiente a", "0")
+			var b = prompt("Digite o coeficiente b", "0")
+			var c = prompt("Digite o coeficiente c", "0")
+
+			if(a != 0) {
+				var delta = (b * b) - (4 * a * c)
+				
+				if(delta > 0) {
+					alert("A equação possui duas raízes reais")
+					alert("Raiz 1 = " + ((-b + Math.sqrt(delta))/(2 * a)) +"\nRaiz 2 = "+ ((-b - Math.sqrt(delta))/(2 * a)));
+				} else if (delta == 0) {
+					alert("A equação apenas uma raíz real")
+					alert("Raiz = " + (-b / (2 * a)) );
+				} else {
+					alert("Não tem raízes reais");
+				}
+			} else {
+				alert("Essa equação não é de segundo grau!")
+			}
+		}
+	</script>
+</head>
+<body>
+	<button onclick="calcularRaizes()">Calcular as raizes da equação</button>
+</body>
+</html>

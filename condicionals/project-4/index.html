@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Situação do aluno</title>
+	<script>
+	function situacaoAluno(media) {
+		if (media >= 7 && media <= 10) {
+			alert("Você foi aprovado")
+		} else if (media < 7 && media >= 5) {
+			alert("Você está na prova final e precisa tirar " + ((55/10) - ((6/10) * media)) / (4/10).toFixed(2) + " para passar")
+		} else if (media < 5 && media >= 0) {
+			alert("Você foi reprovado")
+		}
+	}
+	function media() {
+		var ab1 = parseFloat(prompt("Digite a nota da AB1: ", "0"))
+		var ab2 = parseFloat(prompt("Digite a nota da AB2: ", "0"))
+		
+		var media = (ab1 + ab2) / 2
+		
+		if (media < 7 && media >= 5) {
+			alert("Você precisa fazer a reavalição!")
+			var re = parseFloat(prompt("Digite a nota da reavalição: ", "0"))
+			
+			if (re > ab1 && ab1 < 7) {
+				media = (re + ab1)/2
+			} else if (re > ab2 && ab2 < 7){
+				media = (re + ab2)/2
+			}
+		}
+		
+		situacaoAluno(media)
+	}
+	</script>
+</head>
+<body>
+	<button onclick="media()">Calcular sua media</button>
+</body>
+</html>

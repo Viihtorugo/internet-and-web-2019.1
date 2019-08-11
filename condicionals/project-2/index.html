@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>É um triângulo?</title>
+	<script>
+	function sortTriangle(triangle) {
+				
+		if (triangle.l2 > triangle.l1) {
+			if (triangle.l2 > triangle.l3) {
+				var aux = triangle.l1
+				triangle.l1 = triangle.l2
+				triangle.l2 = aux
+			} else {
+				var aux = triangle.l1
+				triangle.l1 = triangle.l3
+				triangle.l3 = aux
+			}
+		} else {
+			if (triangle.l3 > triangle.l1) {
+				var aux = triangle.l1
+				triangle.l1 = triangle.l3
+				triangle.l3 = aux
+			}
+		}
+	}
+
+	function isTriangle() {
+		var triangle = {
+			l1: prompt("Digite um lado do triângulo", "0"),
+			l2: prompt("Digite outro lado do triângulo", "0"),
+			l3: prompt("Digite o último lado do triângulo", "0")
+		}
+		
+		sortTriangle(triangle)
+		triangle.l1 = parseInt(triangle.l1)
+		triangle.l2 = parseInt(triangle.l2)
+		triangle.l3 = parseInt(triangle.l3)
+
+		if (triangle.l1 > (triangle.l2 + triangle.l3)) {
+			alert("Os lados digitados não é possível criar um triangulo")
+		} else {
+			if ( (triangle.l1 * triangle.l1) > ((triangle.l2 * triangle.l2) + (triangle.l3 * triangle.l3)) ) {
+				alert("O triângulo é obtusângulo")
+			} else if ( (triangle.l1 * triangle.l1) > ((triangle.l2 * triangle.l2) + (triangle.l3 * triangle.l3)) ) {
+				alert("o triângulo é acutângulo")			
+			} else {
+				alert("o triângulo é retângulo")
+			}
+		}		
+	}
+	</script>
+</head>
+<body>
+	<button onclick="isTriangle()">É um triangulo?</button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Restaurante UFAL</title>
+	<script>
+		function getData() {
+			var nome = prompt("Seu nome: ", "");
+			var idade = prompt("Sua idade: ", "0");
+			var peso = prompt("Peso do prato em gramas: ", "0")
+			var qtdSucos = prompt("Quantidade de copo de suco: ", "");
+			var qtdSobr = prompt("Quantidade de pratos de sobremesa: ", "")
+			
+
+			var total = ( (parseFloat(peso)*14/1000) + (parseInt(qtdSucos)*3) + (parseInt(qtdSobr)*2) )
+			
+			var msg = nome + "\nconsumiu:\n" 
+			msg += parseFloat(peso) + " gramas no self-service R$ " + (parseFloat(peso)*14/1000) +" reais\n"
+			msg += qtdSucos + " sucos R$ " + parseInt(qtdSucos)*3 + " reais\n"
+			msg += qtdSobr + " pratos de sobremesa R$ " + parseInt(qtdSobr)*2 + " reais\n"
+			msg += "Total " + total + " reais\n"
+			msg += idade + " anos\n"
+
+
+			if (idade >= 40 && idade <= 50) {
+				msg += "tem 5%\n"
+				msg += total + " - " + total*5/100 + " = " + (total - (total * 5/100) ) + " reais"
+			} else if (idade > 50 && idade <= 60){
+				msg += "tem 10%\n"
+				msg += total + " - " + total*10/100 + " = " + (total - (total * 10/100) ) + " reais"
+			} else if (idade > 60) {
+				msg += "tem 15%\n"
+				msg += total + " - " + total*15/100 + " = " + (total - (total * 15/100) ) + " reais"
+			}
+
+			alert(msg);
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<button onclick="getData()">A conta!</button>
+	</form>
+</body>
+</html>
