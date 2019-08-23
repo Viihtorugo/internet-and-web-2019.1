@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto 2 - a soma dos quadrados dos 10 primeiros números</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <script>
+        function calSumQuad() {
+            
+            count = 0
+
+            for(i = 1; i <= 10; i++) {
+                count += i * i
+
+                document.write("<p>Número atual: " + i + "<br>")
+                document.write("Quadrado número: " + i * i + "<br>")
+                document.write("Soma parcial: " + count + "</p>")
+            }
+            
+            document.body.style.display = "flex"
+            document.body.style.flexDirection = "column"
+            document.body.style.alignItems = "center"
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calSumQuad()">Somar os quadrados</button>
+</body>
+</html>

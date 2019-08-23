@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto 4 - Números primos de 0 a 100</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <script>
+        function isPrime(number) {
+                
+                prime = 0
+
+                for (i = 1; i <= number; i++) {
+                    if (number % i == 0) {
+                        prime += 1
+                    }
+                }
+
+                if (prime == 2) {
+                    return true
+                }
+
+                return false
+        }
+
+        function isPrimeUntil100() {
+    
+            for(n = 0; n <= 100; n++) {
+                
+                if(isPrime(n)) {
+                    document.write("<p>" + n +" é um número primo</p>")
+                } else {
+                    document.write("<p>" + n +" não é um número primo</p>")
+                }
+            }
+                
+                document.body.style.display = "flex"
+                document.body.style.flexDirection = "column"
+                document.body.style.alignItems = "center"
+            }
+        </script>
+</head>
+<body>
+    <button onclick="isPrimeUntil100()">Verificar se é primo de 1 a 100</button>
+</body>
+</html>

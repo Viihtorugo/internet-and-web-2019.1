@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto 3 - Recomendação de bolsas para os alunos</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <script>
+            function recommendOfStudent() {
+    
+                for(i = 1; i <= 10; i++) {
+                    
+                    var name = prompt('Digite o nome do aluno', '')
+                    var media = prompt('Digite a média do aluno', '0')
+
+                    document.write("<p>Nome do aluno: " + name + "<br>")
+                    document.write("Media do aluno: " + media + "<br>")
+
+                    if(media <= 10 && media >= 9) {
+                        document.write("É altamente recomendado</p>")
+                    } else if (media >= 8 && media < 9) {
+                        document.write("Fortemente recomendado</p>")
+                    } else if (media >= 7 && media < 8) {
+                        document.write("Recomendado</p>")
+                    } else if (media < 9 && media >= 0 ) {
+                        document.write("Não recomendado</p>")
+                    } else {
+                        document.write("A média informada não foi válida</p>")
+                    }
+                }
+                
+                document.body.style.display = "flex"
+                document.body.style.flexDirection = "column"
+                document.body.style.alignItems = "center"
+            }
+        </script>
+</head>
+<body>
+    <button onclick="recommendOfStudent()">Analisar os alunos</button>
+</body>
+</html>
