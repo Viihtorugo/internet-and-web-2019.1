@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Achados e Perdidos UFAL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="startItems()">
+
+<header>
+        <h1>Achados e Perdidos</h1>
+</header>
+
+<section class="feed">
+<div id="items" class="grid">
+    <div>
+   	 <h1>Itens perdidos</h1>
+   	 <section class="box" name="lost" id="lost"></section>
+    </div>
+
+    <div>
+   	 <h1>Itens achados</h1>
+   	 <section class="box" name="found" id="found"></section>
+    </div>
+
+    <input type="button" name="register" id="register" class="search" value="Cadastrar item">
+    <input type="button" name="search" id="search" class="search" value="Procurar item">
+</div>
+</section>
+
+<footer class="footer">
+    <ul>
+   	 <li>Achados e Perdidos UFAL &#174 2019. Todos os direitos reservados.</li>
+   	 <li>Contato: +55 82 99132-4930</li>
+    </ul>
+</footer>
+</body>
+
+<div class="modal-search-bg">
+    <div class="modal-search">
+   	 <h1>Pesquisar Item</h1>
+   	 <div class="close-search" id="close-search">+</div>
+   	 <form>
+   		 <input type="text" id="search-title" placeholder="Nome do item">
+   		 <input type="submit" value="Pesquisar" onclick="submitSearchForm();">
+    </form>
+    <div id="search-items"></div>
+    </div>
+</div>
+
+<div class="modal-register-bg">
+    <div class="modal-register">
+   	 <h1>Cadastro</h1>
+   	 <div class="close-register" id="close-register">+</div>
+   	 <!--<form>-->
+        <input type="file" id="item-img">
+        <input type="text" id="item-title" placeholder="Nome do objeto">
+        <input type="text" id="item-email" placeholder="example@email.com">
+        <textarea id="item-desc" rows="5" cols="50" placeholder="Descrição"></textarea>
+        <select id="item-cat">
+            <option value="1">Item achado</option>
+            <option value="2">Item perdido</option>
+        </select>
+        <br>
+        <input type="submit" value="Enviar" onclick="submitRegisterItem()">
+
+   	 <p id="error-message"></p>
+    </div>
+</div>
+
+<script type="text/javascript" src="script.js"></script> <!-- modal login script-->
+
+</html>

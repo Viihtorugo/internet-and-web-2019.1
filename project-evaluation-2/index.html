@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Hora da tabuada!</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            background-color: rgb(233, 213, 255)
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: dodgerblue;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin: 5% auto;
+        }
+
+        button {
+            background-color: dodgerblue;
+            color: white;
+            font-size: 13pt;
+            width: 20%;
+            height: 35px;
+            border-style: solid 1px;
+            border-color: white;
+        }
+
+        div#result {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        div#average {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 15px;
+            width: 100%;
+            font-size: 15pt;
+        }
+
+        p {
+            width: 495px;
+            height: 120px;
+            margin: 5px 5px;
+            text-align: center;
+            border-width: medium;
+            border-style: solid;
+            border-color: black;
+        }
+
+        
+    </style>
+    <script>
+        function startExam() {
+
+            var average = 0
+            var div = ''
+
+            for (i = 0; i < 40; i++) {
+                
+                var name = prompt("Digite o nome do aluno", ' ');
+                var nota = 0
+
+                div += "<p><b>Aluno " + (i + 1) +"</b><br>"
+
+                for(j = 0; j < 10; j++) {
+                    var n1 = Math.floor(Math.random() * 10 + 1)
+                    var n2 = Math.floor(Math.random() * 10 + 1)
+
+                    var answer = parseInt(prompt("Quanto é " + n1 + "x" + n2 +"=? :", '0'))
+
+                    if(n1 * n2 === answer) {
+                        nota += 1
+                        alert("Parabéns, você acertou")
+                    } else {
+                        alert("O correto seria " + n1 * n2 + "!")
+                    }
+                }
+
+                average += nota
+                
+
+                div += '<br>Nome: ' + name + '<br>Nota do aluno: ' + nota
+
+                if (nota >= 9) {
+                    div += "<br>Bravo você é quase um mestre em tabuada de multiplicar</p>"
+                } else if (nota >=7 && nota < 9) {
+                    div += "<br>O teu desempenho está muito bom</p>"
+                } else if (nota < 7) {
+                    div += "<br>Seria muito proveitoso jogar novamente conosco!</p>" 
+                }
+
+                
+            }
+
+            document.getElementById('average').innerHTML = "<b>A média dos alunos foi " + average/40 + "</b>" 
+            document.getElementById('result').innerHTML = div
+
+        }
+    </script>
+</head>
+<body>
+    <header><h1>Exame sobre tabuada</h1></header>
+    <section>
+        <div id="average">
+            <button onclick="startExam()">Começar o Exame</button>
+        </div>
+        <div id="result"></div>
+    </section>
+</body>
+</html>
